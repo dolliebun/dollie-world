@@ -10,6 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Critical artwork framing kept inline so GitHub cannot serve an old cover rule. */
+      @media (min-width: 761px) {
+        .hero { height: calc(100vw * 793 / 1983) !important; min-height: 0 !important; max-height: none !important; }
+        .hero-art { width: 100% !important; height: 100% !important; object-fit: contain !important; object-position: center !important; }
+      }
+      .divider { height: auto !important; object-fit: contain !important; }
+    </style>
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
