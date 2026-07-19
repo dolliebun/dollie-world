@@ -72,3 +72,183 @@
 
 @media(max-width:900px){.atlas-hero{min-height:760px}.atlas-hero>img{object-position:63% center}.atlas-hero-shade{background:linear-gradient(0deg,rgba(10,8,10,.97),rgba(10,8,10,.6) 58%,rgba(10,8,10,.15))}.atlas-hero-copy{width:100%;padding-top:130px}.atlas-intro>div,.house-masthead,.house-profile{grid-template-columns:1fr}.house-map-preview{justify-self:start;max-width:520px;transform:none}.house-masthead{padding-top:125px}.atlas-feature-grid{grid-template-columns:1fr}.house-portal-grid{grid-template-columns:1fr}.restricted-panel{grid-template-columns:1fr}.restricted-image{height:600px;max-width:560px;width:100%}}
 @media(max-width:760px){.atlas-hero{min-height:700px}.atlas-hero-copy{padding-left:24px;padding-right:24px;padding-bottom:65px}.atlas-hero-copy h1{font-size:58px}.atlas-hero-copy .breadcrumbs{margin-bottom:35px}.atlas-intro>div{gap:40px}.atlas-intro h2,.atlas-directory h2,.archive-note h2,.light-heading h2,.house-profile h2{font-size:50px}.atlas-intro-copy>p{font-size:21px}.house-portal{min-height:300px;grid-template-columns:48px 1fr;padding:26px}.house-roman{font-size:48px}.atlas-feature{min-height:490px}.atlas-feature i{position:static;display:block;margin-top:10px}.house-masthead{min-height:0;padding:115px 24px 70px}.house-masthead-copy h1{font-size:64px}.house-map-preview{max-width:100%}.house-subnav{top:64px;justify-content:flex-start;overflow-x:auto}.house-subnav a{padding:16px 20px;white-space:nowrap}.house-facts{grid-template-columns:1fr}.house-facts div:nth-child(odd){border-right:0}.house-facts div:nth-child(even){padding-left:0}.location-grid{grid-template-columns:1fr}.location-card,.location-card-wide{grid-column:auto;min-height:450px}.location-card-wide img{object-fit:cover}.single-location .location-card{min-height:520px}.location-card i{position:static;display:block;margin-top:8px}.location-group+.location-group{margin-top:75px}.house-character>div{height:540px}.next-house{align-items:flex-start;flex-direction:column}.restricted-image{height:540px}.lightbox-bar p{font-size:15px;max-width:45vw}.lightbox-bar a{display:none}.lightbox-stage{padding:10px;place-items:start}.lightbox-stage img{min-width:1100px}.atlas-image>span{right:12px;bottom:12px}.atlas-feature>span{left:22px;right:22px}.location-card>span{left:20px;right:20px}}
+
+/*
+  FINAL IMAGE-FRAMING CONTRACT
+  Banners are shown at their native banner ratio. Gallery covers are 16:9.
+  Maps, lore plates and illustrated book covers are records, not decoration:
+  their complete composition must remain visible.
+*/
+@media (min-width: 1100px) {
+  .hero,
+  .subhero {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1983 / 793;
+  }
+
+  .hero-art,
+  .subhero > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .worlds-page.page-main {
+    padding-top: 0 !important;
+  }
+}
+
+.portal-card {
+  min-height: 0;
+  aspect-ratio: 1672 / 941;
+}
+
+.portal-card img,
+.portal-card:first-child img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.house-map-preview img,
+.location-card img,
+.location-card-wide img,
+.atlas-image img {
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #080708;
+}
+
+.location-card,
+.location-card-wide,
+.single-location .location-card {
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+}
+
+.portal-card:hover img,
+.house-map-preview:hover img,
+.location-card:hover img,
+.atlas-image:hover img {
+  transform: none;
+}
+
+@media (min-width: 761px) and (max-width: 1099px) {
+  .worlds-page.page-main {
+    padding-top: 0 !important;
+  }
+
+  .subhero {
+    height: auto;
+    min-height: 0;
+    padding-top: calc(100vw * 793 / 1983);
+    background: #171116;
+  }
+
+  .subhero > img {
+    height: auto;
+    aspect-ratio: 1983 / 793;
+    object-fit: contain;
+  }
+
+  .subhero-copy {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 55px 8vw 70px;
+    background: #171116;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    display: block;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    padding-top: calc(100vw * 793 / 1983);
+    background: #120d11;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .hero-art {
+    top: 0;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1983 / 793;
+    object-fit: contain;
+    object-position: center;
+    filter: none;
+  }
+
+  .hero-shade {
+    height: calc(100vw * 793 / 1983);
+    bottom: auto;
+    background: linear-gradient(0deg, rgba(18, 13, 17, .38), transparent 70%);
+  }
+
+  .hero-copy {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 38px 24px 56px;
+    background: #120d11;
+  }
+
+  .worlds-page.page-main {
+    padding-top: 0 !important;
+  }
+
+  .subhero {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding-top: calc(100vw * 793 / 1983);
+    background: #171116;
+  }
+
+  .subhero > img {
+    top: 0;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1983 / 793;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .subhero-shade {
+    height: calc(100vw * 793 / 1983);
+    bottom: auto;
+  }
+
+  .subhero-copy {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 38px 24px 58px;
+    background: #171116;
+  }
+
+  .portal-card {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .location-card,
+  .location-card-wide,
+  .single-location .location-card {
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+}
