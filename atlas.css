@@ -842,3 +842,194 @@
     margin: 0 0 58px;
   }
 }
+/* =========================
+   THE HUNT PAGE FIXES
+   ========================= */
+
+/* ---------- intro / understanding section ---------- */
+
+.atlas-intro-copy {
+  display: grid;
+  gap: 2rem;
+}
+
+.atlas-intro-copy p {
+  margin: 0;
+  max-width: 34rem;
+}
+
+.atlas-intro-copy dl {
+  margin: 1rem 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(40, 28, 34, 0.16);
+}
+
+.atlas-intro-copy dl > div {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(40, 28, 34, 0.16);
+}
+
+.atlas-intro-copy dt {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(132, 92, 116, 0.92);
+}
+
+.atlas-intro-copy dd {
+  margin: 0;
+  max-width: 42rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.5rem);
+  line-height: 1.15;
+  color: #20181d;
+}
+
+/* ---------- lore section ---------- */
+
+.lore-entry-copy p {
+  max-width: 36rem;
+}
+
+/* ---------- world directory / follow every thread ---------- */
+
+.world-directory .section-heading {
+  margin-bottom: 3rem;
+}
+
+.world-directory .section-heading p:last-child {
+  max-width: 34rem;
+}
+
+.world-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.world-directory-grid a {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.world-directory-grid a:hover,
+.world-directory-grid a:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(210, 150, 184, 0.45);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.18);
+}
+
+.world-directory-grid small {
+  display: block;
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(214, 165, 192, 0.86);
+}
+
+.world-directory-grid strong {
+  display: block;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.8rem, 2.2vw, 2.5rem);
+  line-height: 1;
+  font-weight: 600;
+  color: #fff7fb;
+}
+
+.world-directory-grid span {
+  display: block;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+}
+
+/* ---------- restricted archive section ---------- */
+
+.archive-note {
+  text-align: center;
+}
+
+.archive-note p {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.archive-note .atlas-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.4rem;
+  border: 1px solid rgba(32, 24, 29, 0.18);
+  background: #20181d;
+  color: #fff7fb;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.archive-note .atlas-button:hover,
+.archive-note .atlas-button:focus-visible {
+  transform: translateY(-2px);
+  background: #34262f;
+  border-color: #34262f;
+}
+
+/* ---------- general readability helpers ---------- */
+
+.archive-note h2,
+.world-directory h2,
+.atlas-intro h2,
+.lore-entry h2 {
+  text-wrap: balance;
+}
+
+.section-heading p,
+.archive-note p,
+.lore-entry-copy p,
+.atlas-intro-copy p {
+  text-wrap: pretty;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1100px) {
+  .world-directory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .atlas-intro-copy dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .atlas-intro-copy dd {
+    font-size: clamp(1.35rem, 5vw, 2rem);
+  }
+}
