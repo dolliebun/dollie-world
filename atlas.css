@@ -1033,3 +1033,253 @@
     font-size: clamp(1.35rem, 5vw, 2rem);
   }
 }
+/* =====================================================
+   FINAL WORLD DIRECTORY OVERRIDE
+   Keep this at the absolute bottom of atlas.css
+   ===================================================== */
+
+.world-directory.section {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.55fr);
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: start;
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding:
+    clamp(6rem, 10vw, 10rem)
+    clamp(1.5rem, 5vw, 6rem);
+
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 18% 20%,
+      rgba(126, 71, 108, 0.12),
+      transparent 34%
+    ),
+    #171316;
+
+  color: #f8f1f5;
+}
+
+/* Reset the global section-heading grid inside this section */
+
+.world-directory .section-heading {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.world-directory .section-heading > div {
+  display: block;
+  width: 100%;
+}
+
+.world-directory .section-kicker {
+  margin: 0 0 1.75rem;
+  color: #c98eae;
+}
+
+.world-directory .section-heading h2 {
+  width: 100%;
+  max-width: 8ch;
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(4rem, 7.2vw, 8.5rem);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+
+  color: #fff8fb;
+}
+
+.world-directory .section-heading h2 em {
+  display: block;
+  color: #d9a1bf;
+  font-weight: 400;
+}
+
+.world-directory .section-heading > p {
+  width: 100%;
+  max-width: 28rem;
+  margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.9rem, 1vw, 1.05rem);
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+
+  color: rgba(248, 241, 245, 0.66);
+}
+
+/* Card grid */
+
+.world-directory-grid {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem;
+
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Completely reset inherited anchor styling */
+
+.world-directory-grid > a,
+.world-directory-grid > a:link,
+.world-directory-grid > a:visited {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
+  min-height: 17rem;
+  padding: clamp(1.6rem, 2.6vw, 2.5rem);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  color: #f8f1f5;
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.world-directory-grid > a:hover,
+.world-directory-grid > a:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(217, 161, 191, 0.55);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(217, 161, 191, 0.11),
+      rgba(255, 255, 255, 0.035)
+    );
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.world-directory-grid small {
+  display: block;
+  margin: 0 0 1.2rem;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: #c98eae;
+}
+
+.world-directory-grid strong {
+  display: block;
+  margin: 0 0 1rem;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 2.8vw, 3.25rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+
+  color: #fff8fb;
+}
+
+.world-directory-grid span {
+  display: block;
+  margin-top: auto;
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.82rem, 0.95vw, 0.95rem);
+  line-height: 1.7;
+  letter-spacing: 0.035em;
+
+  color: rgba(248, 241, 245, 0.69);
+}
+
+/* Prevent generic section rules from recolouring it pink */
+
+body .world-directory,
+body .world-directory.section {
+  background-color: #171316;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .world-directory.section {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .world-directory .section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.65fr);
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .world-directory .section-heading > p {
+    margin: 0;
+  }
+
+  .world-directory .section-heading h2 {
+    max-width: none;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 720px) {
+  .world-directory.section {
+    display: block;
+    padding:
+      clamp(5rem, 16vw, 7rem)
+      1.25rem;
+  }
+
+  .world-directory .section-heading {
+    display: block;
+  }
+
+  .world-directory .section-heading h2 {
+    max-width: 7ch;
+    font-size: clamp(3.7rem, 18vw, 6rem);
+  }
+
+  .world-directory .section-heading > p {
+    margin-top: 2rem;
+  }
+
+  .world-directory-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .world-directory-grid > a,
+  .world-directory-grid > a:link,
+  .world-directory-grid > a:visited {
+    min-height: 14rem;
+  }
+}
